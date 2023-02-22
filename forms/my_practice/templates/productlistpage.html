@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+  list page
+{% endblock %}
+
+{% block cssfiles  %}
+<link rel="stylesheet" href="{% static 'productlist.css' %}">
+{% endblock  %}
+
+{% block content %}
+<div class="container">
+    <div class="card_container">
+        
+        <div class="card_contant">
+            {% for p in product %}
+            <div class="name_container">
+                
+               <p class="name">{{ p.name }}</p> 
+               
+            </div>
+            <div class="price_container">
+                <p class="price">{{p.price}}</p>
+            </div>
+            
+        </div>
+        <div class="rate">
+            <span>likes</span>
+            <button class="vote" onclick= window.location.href="{% url 'vote' p.name p.id %}">{{vote.count}}</button>
+        </div>
+            {% endfor %}
+
+    </div>
+</div>
+
+
+{% endblock content %}

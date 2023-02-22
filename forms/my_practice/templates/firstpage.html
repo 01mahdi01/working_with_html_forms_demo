@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    first page
+{% endblock %}
+
+{% block content %}
+    <h1>
+        hi this is my fucking demo
+    </h1>
+
+    <div>
+    <p>
+        plese login<br>
+    </p>
+    
+    <button onclick= window.location.href={% url 'login' %}> login </button>
+
+    <button onclick= window.location.href={% url 'signup' %}>and if you havent signup 
+         click here </button>
+    </div>
+{% endblock  %}

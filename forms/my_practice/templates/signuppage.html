@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  first page
+{% endblock %}
+
+
+
+{% block content %}
+
+{% if eror %}
+  <h1>{{eror}}</h1>
+{% endif %}
+
+
+  <form action="{% url 'test' %}" method="post">
+    {% csrf_token %}
+    <label for="username">username:</label><br />
+    <input type="text" id="username" name="username" required/><br />
+    <label for="pass">choose a password:</label><br />
+    <input type="password" id="pass" name="pass" required/><br /><br />
+    <input type="submit" value="signup" />
+  </form>
+
+  
+{% endblock %}
